@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>bm.js</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="robots" content="index,follow" />
+<meta property="og:title" content="">
+<meta property="og:type" content="website">
+<meta property="og:description" content="">
+<meta property="og:url" content="">
+<meta property="og:image" content="">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<style type="text/css">
+<!--
+	.area {
+		float: left;
+		margin-right: 10px;
+	}
+-->
+</style>
+</head>
+<body>
+<form name="selBox">
+<select name="blendMode" onchange="_eChange();">
+	<option>-- 選択 --</option>
+	<option>比較 (暗)</option>
+	<option>乗算</option>
+	<option>焼き込みカラー</option>
+	<option>焼き込み (リニア)</option>
+	<option>比較 (明)</option>
+	<option>スクリーン</option>
+	<option>覆い焼き（リニア）- 加算</option>
+	<option>オーバーレイ</option>
+	<option>ハードライト</option>
+	<option>ビビットライト</option>
+	<option>差の絶対値</option>
+</select>
+</form>
+<div class="area">
+	<p>・上レイヤー</p>
+	<canvas id="cvs2" width="300" height="300"></canvas>
+</div>
+<div class="area">
+	<p>・下レイヤー</p>
+	<canvas id="cvs1" width="300" height="300"></canvas>
+</div>
+<div class="area">
+	<p>・ブレンドモード適応後</p>
+	<canvas id="cvs3" width="300" height="300"></canvas>
+</div>
+<script src="js/bm.js"></script>
+<script>
+	
+	var loadedNum = 0;
+	
+	var canvas1 = document.getElementById('cvs1');
+	var ctx1 = canvas1.getContext('2d');
+	var img1 = new Image();
+	img1.src = "images/test1.jpg";
+	img1.onload = function() {
+		ctx1.drawImage(img1, 0, 0);
+		loadedNum++;
+	}
+	
+	var canvas2 = document.getElementById('cvs2');
+	var ctx2 = canvas2.getContext('2d');
+	var img2 = new Image();
+	img2.src = "images/test2.jpg";
+	img2.onload = function() {
+		ctx2.drawImage(img2, 0, 0);
+		loadedNum++;
+	}
+	
+	
+	function _eChange() {
+		
+		if(loadedNum >= 2) {
+			
+			var bmObj = new bm();
+			
+			// cvs2が上に重なって、レイヤー効果がかかるイメージ
+			switch(document.selBox.blendMode.selectedIndex) {
+				case 1:
+					bmObj.apply("cvs1", "cvs2", "cvs3", bmObj.DARKEN); 
+					break;
+				case 2:
+					bmObj.apply("cvs1", "cvs2", "cvs3", bmObj.MULTIPLY); 
+					break;
+				case 3:
+					bmObj.apply("cvs1", "cvs2", "cvs3", bmObj.COLORBURN);
+					break;
+				case 4:
+					bmObj.apply("cvs1", "cvs2", "cvs3", bmObj.LINEARBURN);
+					break;
+				case 5:
+					bmObj.apply("cvs1", "cvs2", "cvs3", bmObj.LIGHTEN);
+					break;
+				case 6:
+					bmObj.apply("cvs1", "cvs2", "cvs3", bmObj.SCREEN);
+					break;
+				case 7:
+					bmObj.apply("cvs1", "cvs2", "cvs3", bmObj.LINEARDODGE);
+					break;
+				case 8:
+					bmObj.apply("cvs1", "cvs2", "cvs3", bmObj.OVERLAY);
+					break;
+				case 9:
+					bmObj.apply("cvs1", "cvs2", "cvs3", bmObj.HARDLIGHT);
+					break;
+				case 10:
+					bmObj.apply("cvs1", "cvs2", "cvs3", bmObj.VIVIDLIGHT);
+					break;
+				case 11:
+					bmObj.apply("cvs1", "cvs2", "cvs3", bmObj.DIFFERENCE);
+					break;
+			}
+		}
+	}
+	
+	
+		
+	
+</script>
+</body>
+</html>
