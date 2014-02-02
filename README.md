@@ -1,7 +1,7 @@
 # bm.js
 
-ブレンドモード いろいろ
-
+ブレンドモード いくつか   
+canvasのgetImageData,putImageData等を使用したピクセル操作でFlashのブレンドモードを再現
 
 ## Demo
 [http://ikeryou.jp/bmjs](http://ikeryou.jp/bmjs) 
