@@ -36,4 +36,5 @@ canvasのgetImageData,putImageData等を使用したピクセル操作でFlash�
   // bmjs.apply("bottom", "top", "output", bmjs.COLORBURN); // 焼き込みカラー
   // bmjs.apply("bottom", "top", "output", bmjs.LINEARBURN); // 焼き込み (リニア)
   // bmjs.apply("bottom", "top", "output", bmjs.LIGHTEN); // 比較 (明)
+  // bmjs.apply("bottom", "top", "output", bmjs.ALPHA); // アルファ
 ````
