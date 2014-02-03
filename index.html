@@ -23,7 +23,6 @@
 </style>
 </head>
 <body>
-hogehoge
 <form name="selBox">
 <select name="blendMode" onchange="_eChange();">
 	<option>-- 選択 --</option>
@@ -38,15 +37,16 @@ hogehoge
 	<option>ハードライト</option>
 	<option>ビビットライト</option>
 	<option>差の絶対値</option>
+	<option>アルファ</option>
 </select>
 </form>
 <div class="area">
-	<p>・上レイヤー</p>
-	<canvas id="cvs2" width="300" height="300"></canvas>
-</div>
-<div class="area">
 	<p>・下レイヤー</p>
 	<canvas id="cvs1" width="300" height="300"></canvas>
+</div>
+<div class="area">
+	<p>・上レイヤー</p>
+	<canvas id="cvs2" width="300" height="300"></canvas>
 </div>
 <div class="area">
 	<p>・ブレンドモード適応後</p>
@@ -116,6 +116,9 @@ hogehoge
 					break;
 				case 11:
 					bmObj.apply("cvs1", "cvs2", "cvs3", bmObj.DIFFERENCE);
+					break;
+				case 12:
+					bmObj.apply("cvs1", "cvs2", "cvs3", bmObj.ALPHA);
 					break;
 			}
 		}

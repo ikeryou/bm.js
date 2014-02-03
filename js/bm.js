@@ -12,6 +12,7 @@
       this.COLORBURN = 8;
       this.LINEARBURN = 9;
       this.LIGHTEN = 10;
+      this.ALPHA = 11;
     }
 
     bm.prototype.apply = function(canvasAId, canvasBId, canvasCId, type) {
@@ -58,8 +59,37 @@
           break;
         case this.LIGHTEN:
           outputImageData = this._lighten(imageDataA, imageDataB);
+          break;
+        case this.ALPHA:
+          outputImageData = this._alpha(imageDataA, imageDataB);
       }
       return contextC.putImageData(outputImageData, 0, 0);
+    };
+
+    bm.prototype._alpha = function(imageDataA, imageDataB) {
+      var aB, aC, bA, bB, bC, dataA, dataB, gA, gB, gC, i, rA, rB, rC;
+      dataA = imageDataA.data;
+      dataB = imageDataB.data;
+      i = 0;
+      while (i < dataA.length) {
+        rA = dataA[i];
+        gA = dataA[i + 1];
+        bA = dataA[i + 2];
+        rB = dataB[i];
+        gB = dataB[i + 1];
+        bB = dataB[i + 2];
+        aB = dataB[i + 3];
+        rC = rA;
+        gC = gA;
+        bC = bA;
+        aC = aB;
+        dataA[i] = rC;
+        dataA[i + 1] = gC;
+        dataA[i + 2] = bC;
+        dataA[i + 3] = aC;
+        i += 4;
+      }
+      return imageDataA;
     };
 
     bm.prototype._lighten = function(imageDataA, imageDataB) {
