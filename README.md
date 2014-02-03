@@ -6,7 +6,8 @@ canvasのgetImageData,putImageData等を使用したピクセル操作でFlash�
 ## Demo
 [http://ikeryou.jp/bmjs](http://ikeryou.jp/bmjs)  
 [http://ikeryou.jp/bmjs/sample/1](http://ikeryou.jp/bmjs/sample/1)  
-[http://ikeryou.jp/bmjs/sample/2](http://ikeryou.jp/bmjs/sample/2) 
+[http://ikeryou.jp/bmjs/sample/2](http://ikeryou.jp/bmjs/sample/2)  
+[http://ikeryou.jp/bmjs/sample/3](http://ikeryou.jp/bmjs/sample/3)
 
 ## Basic Usage
 ````html
