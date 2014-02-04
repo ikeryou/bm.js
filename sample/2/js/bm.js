@@ -15,11 +15,11 @@
       this.ALPHA = 11;
     }
 
-    bm.prototype.apply = function(canvasAId, canvasBId, canvasCId, type) {
+    bm.prototype.apply = function(bgCanvasId, topCanvasId, outPutCanvas, type) {
       var canvasA, canvasB, canvasC, contextA, contextB, contextC, imageDataA, imageDataB, outputImageData;
-      canvasA = document.getElementById(canvasAId);
-      canvasB = document.getElementById(canvasBId);
-      canvasC = document.getElementById(canvasCId);
+      canvasA = document.getElementById(bgCanvasId);
+      canvasB = document.getElementById(topCanvasId);
+      canvasC = document.getElementById(outPutCanvas);
       contextA = canvasA.getContext("2d");
       contextB = canvasB.getContext("2d");
       contextC = canvasC.getContext("2d");
@@ -110,6 +110,7 @@
         dataA[i] = rC;
         dataA[i + 1] = gC;
         dataA[i + 2] = bC;
+        dataA[i + 3] = dataB[i + 3];
         i += 4;
       }
       return imageDataA;
@@ -133,6 +134,7 @@
         dataA[i] = rC;
         dataA[i + 1] = gC;
         dataA[i + 2] = bC;
+        dataA[i + 3] = dataB[i + 3];
         i += 4;
       }
       return imageDataA;
@@ -156,6 +158,7 @@
         dataA[i] = rC;
         dataA[i + 1] = gC;
         dataA[i + 2] = bC;
+        dataA[i + 3] = dataB[i + 3];
         i += 4;
       }
       return imageDataA;
@@ -179,6 +182,7 @@
         dataA[i] = rC;
         dataA[i + 1] = gC;
         dataA[i + 2] = bC;
+        dataA[i + 3] = dataB[i + 3];
         i += 4;
       }
       return imageDataA;
@@ -202,6 +206,7 @@
         dataA[i] = rC;
         dataA[i + 1] = gC;
         dataA[i + 2] = bC;
+        dataA[i + 3] = dataB[i + 3];
         i += 4;
       }
       return imageDataA;
@@ -225,6 +230,7 @@
         dataA[i] = rC;
         dataA[i + 1] = gC;
         dataA[i + 2] = bC;
+        dataA[i + 3] = dataB[i + 3];
         i += 4;
       }
       return imageDataA;
@@ -248,6 +254,7 @@
         dataA[i] = rC;
         dataA[i + 1] = gC;
         dataA[i + 2] = bC;
+        dataA[i + 3] = dataB[i + 3];
         i += 4;
       }
       return imageDataA;
@@ -271,6 +278,7 @@
         dataA[i] = rC;
         dataA[i + 1] = gC;
         dataA[i + 2] = bC;
+        dataA[i + 3] = dataB[i + 3];
         i += 4;
       }
       return imageDataA;
@@ -294,6 +302,7 @@
         dataA[i] = rC;
         dataA[i + 1] = gC;
         dataA[i + 2] = bC;
+        dataA[i + 3] = dataB[i + 3];
         i += 4;
       }
       return imageDataA;
@@ -317,6 +326,7 @@
         dataA[i] = rC;
         dataA[i + 1] = gC;
         dataA[i + 2] = bC;
+        dataA[i + 3] = dataB[i + 3];
         i += 4;
       }
       return imageDataA;
@@ -340,6 +350,7 @@
         dataA[i] = rC;
         dataA[i + 1] = gC;
         dataA[i + 2] = bC;
+        dataA[i + 3] = dataB[i + 3];
         i += 4;
       }
       return imageDataA;
