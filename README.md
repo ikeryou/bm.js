@@ -41,3 +41,7 @@ canvasのgetImageData,putImageData等を使用したピクセル操作でFlash�
   // bmjs.apply("bottom", "top", "output", bmjs.LIGHTEN); // 比較 (明)
   // bmjs.apply("bottom", "top", "output", bmjs.ALPHA); // アルファ
 ````
+## Demo 03
+<img src="http://ikeryou.jp/bmjs/images/img1.jpg" />
+## Demo 04
+<img src="http://ikeryou.jp/bmjs/images/img2.jpg" />
