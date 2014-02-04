@@ -4,10 +4,12 @@
 canvasのgetImageData,putImageData等を使用したピクセル操作でFlashのブレンドモードを再現
 
 ## Demo
-[http://ikeryou.jp/bmjs](http://ikeryou.jp/bmjs)  
-[http://ikeryou.jp/bmjs/sample/1](http://ikeryou.jp/bmjs/sample/1)  
-[http://ikeryou.jp/bmjs/sample/2](http://ikeryou.jp/bmjs/sample/2)  
-[http://ikeryou.jp/bmjs/sample/3](http://ikeryou.jp/bmjs/sample/3)
+[demo](http://ikeryou.jp/bmjs)
+
+[demo 01](http://ikeryou.jp/bmjs/sample/1)  
+[demo 02](http://ikeryou.jp/bmjs/sample/2)  
+[demo 03](http://ikeryou.jp/bmjs/sample/3)  
+[demo 04](http://ikeryou.jp/bmjs/sample/4)
 
 ## Basic Usage
 ````html
